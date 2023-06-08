@@ -11,7 +11,7 @@
     "prompts": "node ./scripts/fetch-prompts.mjs",
     "prepare": "husky install",
     "proxy-dev": "sh ./scripts/init-proxy.sh && proxychains -f ./scripts/proxychains.conf yarn dev",
-    "deploy": "next build && next start"
+    "deploy": "sh ./scripts/deploy.sh"
   },
   "dependencies": {
     "@fortaine/fetch-event-source": "^3.0.6",
