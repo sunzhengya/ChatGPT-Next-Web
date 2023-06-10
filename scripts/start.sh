@@ -1,3 +1,1 @@
-
-next stop
-next start
+yarn start
