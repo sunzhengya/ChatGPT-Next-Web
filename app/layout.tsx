@@ -7,8 +7,9 @@ import { getBuildConfig } from "./config/build";
 const buildConfig = getBuildConfig();
 
 export const metadata = {
-  title: "ChatGPT Next Web",
-  description: "Your personal ChatGPT Chat Bot.",
+  title: "汪汪CHAT",
+  description:
+    "在线人工智能原创文章生成器，提供全自动AI写文章、AI写论文、AI写小说、AI对对联、AI写诗歌、AI写作文等自然语言处理服务。",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -19,7 +20,7 @@ export const metadata = {
     { media: "(prefers-color-scheme: dark)", color: "#151515" },
   ],
   appleWebApp: {
-    title: "ChatGPT Next Web",
+    title: "汪汪CHAT",
     statusBarStyle: "default",
   },
 };
