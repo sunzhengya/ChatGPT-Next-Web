@@ -59,7 +59,7 @@ export function AuthPage() {
         <input
           className={styles["auth-input"]}
           type="text"
-          placeholder={Locale.Auth.InputEmail}
+          // placeholder={Locale.Auth.InputEmail}
           value={access.accessCode}
           onChange={(e) => {
             access.updateCode(e.currentTarget.value);
@@ -68,7 +68,7 @@ export function AuthPage() {
         <input
           className={styles["auth-input"]}
           type="text"
-          placeholder={Locale.Auth.InputPwd}
+          // placeholder={Locale.Auth.InputPwd}
           value={access.accessCode}
           onChange={(e) => {
             access.updateCode(e.currentTarget.value);
@@ -76,7 +76,7 @@ export function AuthPage() {
         />
         <div className={styles["auth-actions"]}>
           <IconButton
-            text={Locale.Auth.Login}
+            text={Locale.Auth.Confirm}
             type="primary"
             onClick={goHome}
           />
