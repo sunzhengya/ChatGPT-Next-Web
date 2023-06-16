@@ -14,6 +14,8 @@ import { getCSSVar, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { Path, SlotID } from "../constant";
 import { ErrorBoundary } from "./error";
+// @ts-ignore
+import cookie from "react-cookies";
 
 import {
   HashRouter as Router,
@@ -145,6 +147,15 @@ function Screen() {
 }
 
 export function Home() {
+  useEffect(() => {
+    fetch(
+      "/phpApi/checkuserstatus.php?rid=" +
+        new Date().getTime() +
+        "&userrndstr=" +
+        cookie.load("userrndstr"),
+    );
+  }, []);
+
   useSwitchTheme();
 
   if (!useHasHydrated()) {
