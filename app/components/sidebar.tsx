@@ -13,7 +13,7 @@ import PluginIcon from "../icons/plugin.svg";
 
 import Locale from "../locales";
 
-import { useAppConfig, useChatStore } from "../store";
+import { useAccessStore, useAppConfig, useChatStore } from "../store";
 
 import {
   MAX_SIDEBAR_WIDTH,
@@ -109,7 +109,7 @@ export function SideBar(props: { className?: string }) {
   const { onDragMouseDown, shouldNarrow } = useDragSideBar();
   const navigate = useNavigate();
   const config = useAppConfig();
-
+  const access = useAccessStore();
   useHotKey();
 
   return (
@@ -151,7 +151,7 @@ export function SideBar(props: { className?: string }) {
           }
         }}
       >
-        <ChatList narrow={shouldNarrow} />
+        {access.isAuthorized() && <ChatList narrow={shouldNarrow} />}
       </div>
 
       <div className={styles["sidebar-tail"]}>

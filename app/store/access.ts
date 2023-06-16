@@ -18,6 +18,7 @@ export interface AccessControlStore {
   enabledAccessControl: () => boolean;
   isAuthorized: () => boolean;
   fetch: () => void;
+  userInfo?: any;
 }
 
 let fetchState = 0; // 0 not fetch, 1 fetching, 2 done
@@ -30,7 +31,7 @@ export const useAccessStore = create<AccessControlStore>()(
       needCode: true,
       hideUserApiKey: false,
       openaiUrl: "/api/openai/",
-
+      userInfo: {},
       enabledAccessControl() {
         get().fetch();
 
@@ -44,11 +45,11 @@ export const useAccessStore = create<AccessControlStore>()(
       },
       isAuthorized() {
         get().fetch();
-
+        return !!get().userInfo.uid;
         // has token or has code or disabled access control
-        return (
-          !!get().token || !!get().accessCode || !get().enabledAccessControl()
-        );
+        // return (
+        //   !!get().token || !!get().accessCode || !get().enabledAccessControl()
+        // );
       },
       fetch() {
         if (fetchState > 0) return;

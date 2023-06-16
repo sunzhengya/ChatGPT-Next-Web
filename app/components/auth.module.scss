@@ -19,18 +19,58 @@
   .auth-tips {
     font-size: 14px;
   }
+  .account-login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 
   .auth-input {
-    margin: 3vh 0;
+    margin: 1vh 0;
   }
 
   .auth-actions {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 40%;
 
     button:not(:last-child) {
       margin-bottom: 10px;
+    }
+  }
+
+  .other-wrap {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .other-login {
+      width: 100%;
+      margin: 10px 0;
+      position: relative;
+      text-align: center;
+      span {
+        padding: 0 10px;
+        font-size: 12px;
+        z-index: 1;
+        position: relative;
+        background-color: #fff;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        right: 0;
+        height: 1px;
+        background-color: rgb(222, 222, 222);
+      }
+    }
+    .wechat {
+      width: 40px;
+      height: 40px;
     }
   }
 }

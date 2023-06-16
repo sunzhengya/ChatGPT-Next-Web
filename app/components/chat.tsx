@@ -484,8 +484,10 @@ export function Chat() {
       }
     }
   };
-
   const doSubmit = (userInput: string) => {
+    if (!accessStore.isAuthorized()) {
+      window.location.href = "/#/auth";
+    }
     if (userInput.trim() === "") return;
     setIsLoading(true);
     chatStore.onUserInput(userInput).then(() => setIsLoading(false));
