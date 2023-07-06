@@ -100,13 +100,7 @@ const ar: PartialLocaleType = {
   Settings: {
     Title: "الإعدادات",
     SubTitle: "جميع الإعدادات",
-    Actions: {
-      ClearAll: "مسح جميع البيانات",
-      ResetAll: "إعادة تعيين جميع الإعدادات",
-      Close: "إغلاق",
-      ConfirmResetAll: "هل أنت متأكد من رغبتك في إعادة تعيين جميع الإعدادات؟",
-      ConfirmClearAll: "هل أنت متأكد من رغبتك في مسح جميع البيانات؟",
-    },
+
     Lang: {
       Name: "Language", // تنبيه: إذا كنت ترغب في إضافة ترجمة جديدة، يرجى عدم ترجمة هذه القيمة وتركها "Language"
       All: "كل اللغات",
@@ -136,8 +130,10 @@ const ar: PartialLocaleType = {
       SubTitle: "معاينة Markdown في فقاعة",
     },
     Mask: {
-      Title: "شاشة تظهر الأقنعة",
-      SubTitle: "عرض شاشة تظهر الأقنعة قبل بدء الدردشة الجديدة",
+      Splash: {
+        Title: "شاشة تظهر الأقنعة",
+        SubTitle: "عرض شاشة تظهر الأقنعة قبل بدء الدردشة الجديدة",
+      },
     },
     Prompt: {
       Disable: {
